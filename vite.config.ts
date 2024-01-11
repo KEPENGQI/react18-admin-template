@@ -1,5 +1,6 @@
 import path from 'path';
 
+import { inspectorServer } from '@react-dev-inspector/vite-plugin';
 import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { defineConfig } from 'vite';
@@ -18,6 +19,7 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    inspectorServer(),
     // 同步tsconfig.json的path设置alias
     tsconfigPaths(),
     createSvgIconsPlugin({

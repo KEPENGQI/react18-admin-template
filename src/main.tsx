@@ -8,6 +8,8 @@ import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 // eslint-disable-next-line import/no-unresolved
 import 'virtual:svg-icons-register';
+// code inspect
+import { Inspector } from 'react-dev-inspector';
 
 import App from '@/App';
 
@@ -48,6 +50,7 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Suspense>
+        <Inspector keys={['Ctrl', 'Shift', 'Alt', 'Z']} />
         <App />
       </Suspense>
     </QueryClientProvider>
